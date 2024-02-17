@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String = "your_name", modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name! Welcome to Smartway!",
+        text = "Hello $name! Welcome to Smartway, please enter in some addresses to start routing!",
         modifier = modifier
     )
 }
