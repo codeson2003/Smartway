@@ -87,11 +87,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope by 
     }
     private fun getRoute(origin: String, dest: String) = launch {
         withContext(Dispatchers.IO) {
-//            val origin = origin
-//
-//            val dest = pairs[1]
 
-            val requestUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=$origin&destination=$dest&key=AIzaSyC1h3oQs3G96pIwlF_IVzOzS5iwtE0N2ac"
+            val requestUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=$origin&destination=$dest&key=API_KEY" // change youre api key here
 
             val request = Request.Builder()
                 .url(requestUrl)
@@ -157,107 +154,3 @@ val moshi = Moshi.Builder()
 
 val directionsAdapter = moshi.adapter(DirectionsResponse::class.java)
 
-
-//AIzaSyC1h3oQs3G96pIwlF_IVzOzS5iwtE0N2ac
-
-//    private fun saveAllDestinationsToList() {
-//        destinationList.clear()
-//        latLngList.clear()
-//        for (i in 0 until editTextContainer.childCount) {
-//            val view = editTextContainer.getChildAt(i)
-//            if (view is EditText) {
-//                val destination = view.text.toString()
-//                destinationList.add(destination)
-//            }
-//        }
-////        getLatLong()
-//    }
-
-//    private fun getLatLong() {
-//        val geocoder = Geocoder(this, Locale.getDefault())
-//        for (destination in destinationList) {
-//            try {
-//                val addressList = geocoder.getFromLocationName(destination, 1)
-//                if (addressList != null) {
-//                    if (addressList.isNotEmpty()) {
-//                        val address = addressList?.get(0)
-//                        if (address != null) {
-//                            latLngList.add(LatLng(address.latitude, address.longitude))
-//                        }
-//                    }
-//                }
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//            }
-//        }
-//    }
-
-//class MainActivity : AppCompatActivity(), OnMapReadyCallback {
-//    private lateinit var editTextContainer: LinearLayout
-//    private var editTextCount = 1
-//    private var destinationList: MutableList<String> = mutableListOf()
-//    private var latLngList: MutableList<LatLng> = mutableListOf()
-//    private lateinit var mMap: GoogleMap
-//    private val client = OkHttpClient()
-//
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        editTextContainer = findViewById(R.id.editTextContainer)
-//        val btnShow: Button = findViewById(R.id.btnShow)
-//        val btnSort: Button = findViewById(R.id.btnSort)
-//
-//        btnShow.setOnClickListener {
-//            addNewEditText()
-//        }
-//
-//
-//        btnSort.setOnClickListener {
-////            saveAllDestinationsToList()
-//            getRoute(destinationList)
-//
-//        }
-//
-//        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-//        mapFragment.getMapAsync(this)
-//    }
-//
-//    private fun addNewEditText() {
-//        val newEditText = EditText(this).apply {
-//            id = editTextCount++
-//            hint = "Enter a destination"
-//            setPadding(5, 5, 5, 5)
-//            textSize = 22f
-//        }
-//        val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-//        editTextContainer.addView(newEditText, layoutParams)
-//    }
-//
-//
-//
-//    private fun getRoute(destinationList: MutableList<String>) {
-//        val origin = destinationList[0]
-//        val dest = destinationList[1]
-//
-//        val requestUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=$origin&destination=$dest&key=AIzaSyC1h3oQs3G96pIwlF_IVzOzS5iwtE0N2ac"
-//
-//        val request = Request.Builder()
-//            .url(requestUrl)
-//            .build()
-//
-//        client.newCall(request).execute().use { response ->
-//            if (!response.isSuccessful) throw IOException("Unexpected code $response")
-//
-//            val responseData = response.body?.string()
-//            print(responseData)
-//        }
-//    }
-//
-//    override fun onMapReady(googleMap: GoogleMap) {
-//        mMap = googleMap
-//        val initialLocation = LatLng(40.71830841160277, -74.01058004547683)
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(initialLocation))
-//    }
-//}
