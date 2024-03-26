@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- EditText container -->
+    <LinearLayout
+        android:id="@+id/editTextContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp">
+
+        <!-- EditText for entering destination -->
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:hint="Enter a destination"
+            android:padding="5dp"
+            android:textSize="22sp" />
+
+        <!-- Button to add destination -->
+        <Button
+            android:id="@+id/btnShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <!-- RecyclerView for displaying destination items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/destinationRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextContainer"
+        android:layout_above="@id/btnSort"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="5dp" />
+
+    <!-- Button to sort destinations -->
+    <Button
+        android:id="@+id/btnSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sort"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
